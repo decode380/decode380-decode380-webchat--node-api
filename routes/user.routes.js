@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { body, header } from "express-validator";
 
-import { createUser } from '../controllers/user.controller.js';
+import { createUser, getUsers } from '../controllers/user.controller.js';
 import { checkJWT } from '../middlewares/check-jwt.js';
 import { checkValidations } from '../middlewares/check-validations.js';
 
@@ -16,4 +16,9 @@ router.post('/create', [
     checkValidations,
     checkJWT,
     createUser
+]);
+
+router.get('/getAll', [
+    checkJWT,
+    getUsers
 ]);

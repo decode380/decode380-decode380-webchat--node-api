@@ -6,9 +6,9 @@ const userSchema = new Schema({
     active: { type: Boolean, default: true },
 });
 
-userSchema.methods.toJSON = function() {
-    const { _id, __v, ...user} = this.toObject();
-    return user;
-}
+// userSchema.methods.toJSON = function() {
+//     const { _id, __v, ...user} = this.toObject();
+//     return user;
+// }
 
 export const User = model('User', userSchema); 

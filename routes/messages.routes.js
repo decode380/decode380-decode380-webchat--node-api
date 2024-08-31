@@ -8,7 +8,7 @@ import { checkValidations } from "../middlewares/check-validations.js";
 export const router = Router();
 
 router.get('/:id', [
-    param('id', 'chat id is required on path').not().isEmpty(),
+    param('id', 'id of user is required on path').not().isEmpty(),
     checkValidations,
     checkJWT,
     getMessagesByChatId
